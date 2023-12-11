@@ -1,0 +1,21 @@
+%% results calculated from the FE simulations
+k_g = [
+0.0702716	0.06429049	0.055941239	0.047816919
+0.079912416	0.073233784	0.063171593	0.053119721
+0.086917976	0.082382502	0.071838564	0.059591915
+0.090846324	0.086442378	0.079248094	0.066645784
+];
+
+lc_d = 0.05:0.05:0.2;
+tc_tp = 0.05:0.05:0.2;
+
+%% plot the figure
+pcolor(tc_tp, lc_d, k_g);
+c = colorbar;
+c.Label.String = 'global curvature';
+xlabel('t_{c}/t_{o}', 'Fontsize', 16);
+ylabel('l_{c}/d', 'Fontsize', 16);
+shading interp
+colormap("parula");
+ax = gca;
+ax.FontSize = 16;
